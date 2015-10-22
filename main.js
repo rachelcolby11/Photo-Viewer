@@ -7,10 +7,11 @@ $.getJSON(url, function(data){
     src = "https://farm"+ item.farm +".static.flickr.com/"+ item.server +"/"+ item.id +"_"+ item.secret +"_m.jpg";
      $("<img/>").attr("src", src).appendTo("#images");
 
-    var div = document.createElement("DIV");
+    //var div = document.createElement("DIV");
     var title = document.createTextNode(item.title + "; ");
-    div.appendChild(title);
-    document.body.appendChild(title);
+    
+    document.getElementById("images").appendChild(title);
 
   });
 });
+
