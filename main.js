@@ -12,8 +12,13 @@ request.onload = function() {
     console.log("successfully parsed JSON");
     for (var i=0; i < data.photos.photo.length; i++) {
       item = data.photos.photo[i]
+      // Build src from JSON
       src = "https://farm"+ item.farm +".static.flickr.com/"+ item.server +"/"+ item.id +"_"+ item.secret +"_m.jpg";
-      $("<img/>").attr("src", src).appendTo("#images");
+      // Display photo
+      var img = document.createElement("img");
+      img.setAttribute("src", src);
+      document.getElementById("images").appendChild(img);
+      // Display title
       var title = document.createTextNode(item.title + "; ");
       document.getElementById("images").appendChild(title);
     }
