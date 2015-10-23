@@ -16,13 +16,19 @@ request.onload = function() {
       item = data.photos.photo[i]
       // Build image src from JSON
       src = "https://farm"+ item.farm +".static.flickr.com/"+ item.server +"/"+ item.id +"_"+ item.secret +"_m.jpg";
-      // Display photo
-      var img = document.createElement("img");
-      img.setAttribute("src", src);
-      document.getElementById("images").appendChild(img);
-      // Display title
-      var title = document.createTextNode(item.title + "; ");
-      document.getElementById("images").appendChild(title);
+      // Create div for photo and title and append to images div
+      var currentDiv = document.createElement("div");
+      currentDiv.id = item.title;
+      currentDiv.className = "col-1-8";
+      // document.getElementById(item.title).className += " col-1-8";
+      document.getElementById("images").appendChild(currentDiv);
+        // Display photo
+        var img = document.createElement("img");
+        img.setAttribute("src", src);
+        document.getElementById(item.title).appendChild(img);
+        // Display title
+        var title = document.createTextNode(item.title + "; ");
+        document.getElementById(item.title).appendChild(title);
     }
    } else {
     console.log("error");
