@@ -29,7 +29,7 @@ request.onload = function() {
         var br = document.createElement("br");
         document.getElementById(item.title).appendChild(br);
         // Display title
-        var title = document.createTextNode(item.title + "; ");
+        var title = document.createTextNode(item.title);
         document.getElementById(item.title).appendChild(title);
     }
    } else {
