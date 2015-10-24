@@ -20,12 +20,14 @@ request.onload = function() {
       var currentDiv = document.createElement("div");
       currentDiv.id = item.title;
       currentDiv.className = "col-1-8";
-      // document.getElementById(item.title).className += " col-1-8";
       document.getElementById("images").appendChild(currentDiv);
         // Display photo
         var img = document.createElement("img");
         img.setAttribute("src", src);
         document.getElementById(item.title).appendChild(img);
+        // line break
+        var br = document.createElement("br");
+        document.getElementById(item.title).appendChild(br);
         // Display title
         var title = document.createTextNode(item.title + "; ");
         document.getElementById(item.title).appendChild(title);

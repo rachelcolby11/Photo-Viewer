@@ -1,4 +1,5 @@
 .col-1-8 {
   float: left;
   width: (100%/8);
+  padding: 10px;
 }
