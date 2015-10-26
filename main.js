@@ -28,13 +28,10 @@ request.onload = function() {
         // line break
         var br = document.createElement("br");
         document.getElementById(item.title).appendChild(br);
-        // Display title
-        var title = document.createTextNode(item.title);
-        document.getElementById(item.title).appendChild(title);
-        // Display test link under each photo
+        // Make photo titles into links
         var aTag = document.createElement('a');
         aTag.setAttribute('href',"http://Google.com");
-        aTag.innerHTML = "test link";
+        aTag.innerHTML = item.title;
         document.getElementById(item.title).appendChild(aTag);
     }
    } else {
