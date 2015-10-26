@@ -31,11 +31,12 @@ request.onload = function() {
         // Display photo titles
         var title = document.createTextNode(item.title)
         document.getElementById(item.title).appendChild(title);
-        // Wrap <a> tags around photos to make them into links
-        var aTag = document.createElement('a');
+        // Wrap <a> tags around photos; link to lightbox view
+        var aTag = document.createElement("a");
         img.parentNode.insertBefore(aTag, img);
-        aTag.appendChild(img)
-        aTag.setAttribute('href',"http://Google.com");
+        aTag.appendChild(img);
+        aTag.setAttribute("href","javascript:void(0)");
+        aTag.setAttribute("onclick", "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';");
     }
    } else {
     console.log("error");
