@@ -28,11 +28,14 @@ request.onload = function() {
         // line break
         var br = document.createElement("br");
         document.getElementById(item.title).appendChild(br);
-        // Make photo titles into links
+        // Display photo titles
+        var title = document.createTextNode(item.title)
+        document.getElementById(item.title).appendChild(title);
+        // Wrap <a> tags around photos to make them into links
         var aTag = document.createElement('a');
+        img.parentNode.insertBefore(aTag, img);
+        aTag.appendChild(img)
         aTag.setAttribute('href',"http://Google.com");
-        aTag.innerHTML = item.title;
-        document.getElementById(item.title).appendChild(aTag);
     }
    } else {
     console.log("error");
