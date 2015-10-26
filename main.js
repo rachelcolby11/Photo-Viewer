@@ -31,6 +31,11 @@ request.onload = function() {
         // Display title
         var title = document.createTextNode(item.title);
         document.getElementById(item.title).appendChild(title);
+        // Display test link under each photo
+        var aTag = document.createElement('a');
+        aTag.setAttribute('href',"http://Google.com");
+        aTag.innerHTML = "test link";
+        document.getElementById(item.title).appendChild(aTag);
     }
    } else {
     console.log("error");
